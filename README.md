@@ -140,7 +140,7 @@ Add to `package.json`:
 ```json
 {
   "dependencies": {
-    "arsya": "npm:arsya-baileys-open@^1.0.7"
+    "arsya": "npm:arsya-baileys-open@^1.0.9"
   }
 }
 ```
@@ -175,7 +175,7 @@ Ensure `package.json` has `"type": "module"`:
   "name": "my-bot",
   "type": "module",
   "dependencies": {
-    "arsya": "npm:arsya-baileys-open@^1.0.7"
+    "arsya": "npm:arsya-baileys-open@^1.0.9"
   }
 }
 ```
