@@ -1,6 +1,6 @@
 <div align="center">
 
-### arsya-baileys — Modded Baileys by **Arsya**
+### arsya-baileys-open — Modded Baileys by **Arsya**
 
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D20.0.0-339933?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org)
@@ -121,22 +121,10 @@ If you are documenting or integrating this project, treat `lib/index.js` and `li
 
 ## 📦 Installation
 
-> [!IMPORTANT]
-> The npm package `arsya-baileys` was **pulled from npm** as a security holding on 9 Oct 2026.
-> Install only via the **GitHub tarball** (below). Do **not** use `npm install arsya-baileys`.
-
-### From GitHub tarball (recommended)
+### From npm (recommended)
 
 ```bash
-npm install https://raw.githubusercontent.com/ziole-visa/arsya-baileys/main/dist/arsya-baileys-1.0.6.tgz
-```
-
-Verify integrity with SHA-256:
-
-```bash
-curl -sL https://raw.githubusercontent.com/ziole-visa/arsya-baileys/main/dist/arsya-baileys-1.0.6.tgz -o arsya-baileys-1.0.6.tgz
-shasum -a 256 arsya-baileys-1.0.6.tgz
-# Expected: 71a0f405404014c50b7866ad219d67c730d504e54496a24ac13d1aacc9e0ff54
+npm install arsya-baileys-open
 ```
 
 Recommended companion packages for examples in this README:
@@ -152,7 +140,7 @@ Add to `package.json`:
 ```json
 {
   "dependencies": {
-    "arsya": "https://raw.githubusercontent.com/ziole-visa/arsya-baileys/main/dist/arsya-baileys-1.0.6.tgz"
+    "arsya": "npm:arsya-baileys-open@^1.0.7"
   }
 }
 ```
@@ -187,7 +175,7 @@ Ensure `package.json` has `"type": "module"`:
   "name": "my-bot",
   "type": "module",
   "dependencies": {
-    "arsya": "https://raw.githubusercontent.com/ziole-visa/arsya-baileys/main/dist/arsya-baileys-1.0.6.tgz"
+    "arsya": "npm:arsya-baileys-open@^1.0.7"
   }
 }
 ```
@@ -198,7 +186,7 @@ Ensure `package.json` has `"type": "module"`:
 ### 2. Install Dependencies
 
 ```bash
-npm install https://raw.githubusercontent.com/ziole-visa/arsya-baileys/main/dist/arsya-baileys-1.0.6.tgz pino qrcode-terminal
+npm install arsya-baileys-open pino qrcode-terminal
 ```
 
 ### 3. Create `index.js`
@@ -208,7 +196,7 @@ import makeWASocket, {
   useMultiFileAuthState,
   DisconnectReason,
   Browsers,
-} from "arsya-baileys";
+} from "arsya-baileys-open";
 import pino from "pino";
 import qrcode from "qrcode-terminal";
 
@@ -398,7 +386,7 @@ console.log("Pairing code:", code); // e.g. "A1B2-C3D4"
 **Authentication State:**
 
 ```js
-import { useMultiFileAuthState } from "arsya-baileys";
+import { useMultiFileAuthState } from "arsya-baileys-open";
 
 const { state, saveCreds } = await useMultiFileAuthState("./session");
 // state.creds → credentials (me, platform, noise keys, etc.)
@@ -413,7 +401,7 @@ import {
   BufferJSON,
   initAuthCreds,
   makeCacheableSignalKeyStore,
-} from "arsya-baileys";
+} from "arsya-baileys-open";
 
 const credsStore = new Map();
 const keyStoreData = new Map();
@@ -472,7 +460,7 @@ import {
   DisconnectReason,
   fetchLatestBaileysVersion,
   makeCacheableSignalKeyStore,
-} from "arsya-baileys";
+} from "arsya-baileys-open";
 
 const { version, isLatest } = await fetchLatestBaileysVersion();
 console.log(version, isLatest);
@@ -487,7 +475,7 @@ Modul VoIP kini terintegrasi langsung di `arsya-baileys` menggunakan `VoipClient
 **Inisiasi VoIP Client:**
 
 ```js
-import { VoipClient, CallState } from "arsya-baileys";
+import { VoipClient, CallState } from "arsya-baileys-open";
 
 // Lakukan ini SETELAH connection === "open"
 if (!global.voipClient) {
@@ -968,13 +956,13 @@ await sock.sendLinkV2(
   "Search results:\n- {{IE_0}}Official docs{{/IE_0}}\n- {{IE_1}}GitHub repo{{/IE_1}}",
   [
     {
-      url: "https://www.npmjs.com/package/arsya-baileys",
+      url: "https://www.npmjs.com/package/arsya-baileys-open",
       displayName: "Official docs",
       sourceDisplayName: "npm",
       sourceSubtitle: "package registry",
     },
     {
-      url: "https://github.com/Arsya/arsya-baileys",
+      url: "https://github.com/ziole-visa/arsya-baileys",
       displayName: "GitHub repo",
       sourceDisplayName: "github",
       sourceSubtitle: "source hosting",
@@ -1546,7 +1534,7 @@ import {
 
   // Types
   WASocket,
-} from "arsya-baileys";
+} from "arsya-baileys-open";
 ```
 
 > [!NOTE]
@@ -1625,6 +1613,6 @@ MIT © Arsya (arsya-baileys fork)
 
 **Made with 💚 by Arsya**
 
-[⭐ Star this repo](https://github.com/Arsya/arsya-baileys) · [🐛 Report Bug](https://github.com/Arsya/arsya-baileys/issues) · [💡 Request Feature](https://github.com/Arsya/arsya-baileys/issues)
+[⭐ Star this repo](https://github.com/ziole-visa/arsya-baileys) · [🐛 Report Bug](https://github.com/ziole-visa/arsya-baileys/issues) · [💡 Request Feature](https://github.com/ziole-visa/arsya-baileys/issues)
 
 </div>
